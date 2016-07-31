@@ -96,13 +96,12 @@ final class TypeDescriptor{
     }
 
     private static void write(Object o,Annotation annotation){
-        df.put(o, Collections.singletonList(annotation));
+        List<Annotation> list=new ArrayList<Annotation>(1);
+        list.add(annotation);
+        df.put(o,list);
     }
     private static void postWrite(Object o,Annotation annotation){
-        List<Annotation> list=new ArrayList<Annotation>(df.get(o));
-        list.add(annotation);
-        df.remove(o);
-        df.put(o,list);
+        df.get(o).add(annotation);
     }
 
 
