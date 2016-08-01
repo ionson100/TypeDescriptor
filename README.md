@@ -1,5 +1,5 @@
 # TypeDescriptor
-add annotations to an object in real-time
+add annotations to an object in runtime
 ```java
 @Target(value= ElementType.FIELD)
 @Retention(value= RetentionPolicy.RUNTIME)
