@@ -92,7 +92,7 @@ final class TypeDescriptor {
     }
 
     private static void write(Object o, final Annotation annotation) {
-        df.put(o, new ArrayList<Annotation>(){{add(annotation);}});
+        df.put(o, Collections.synchronizedList(new ArrayList<Annotation>(){{add(annotation);}}));
     }
 
     private static void postWrite(Object o, Annotation annotation) {
